@@ -19,10 +19,18 @@ import AutoTyper from 'react-auto-typer'
 
 function Example() {
   render() {
-    return <AutoTyper text={'Sample text here'} delay={100} />
+    return <AutoTyper text={'Sample text here'} delay={100} styleClass={'autotyper'}/>
   }
 }
 ```
+
+## Props
+#### text (required)
+Text to auto type.
+#### delay (required)
+Delay between typing.
+#### stlyleClass (required)
+Custom CSS styles.
 
 ## Example
 [Online Demo](https://trishantpahwa.me/not-found)
