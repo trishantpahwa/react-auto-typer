@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { AutoTyper } from '.'
 
-describe('ExampleComponent', () => {
+describe('AutoTyper', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(AutoTyper).toBeTruthy()
   })
 })

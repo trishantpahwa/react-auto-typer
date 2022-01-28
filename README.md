@@ -15,15 +15,18 @@ npm install --save react-auto-typer
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-auto-typer'
+import AutoTyper from 'react-auto-typer'
 import 'react-auto-typer/dist/index.css'
 
-class Example extends Component {
+function Example() {
   render() {
-    return <MyComponent />
+    return <AutoTyper text={'Sample text here'} delay={100} />
   }
 }
 ```
+
+## Example
+[Online Demo](https://trishantpahwa.me/not-found)
 
 ## License
 
