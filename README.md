@@ -1,6 +1,6 @@
 # react-auto-typer
 
-> An auto typer component for react.
+An very minified auto typer component for react.
 
 [![NPM](https://img.shields.io/npm/v/react-auto-typer.svg)](https://www.npmjs.com/package/react-auto-typer) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -16,7 +16,6 @@ npm install --save react-auto-typer
 import React, { Component } from 'react'
 
 import AutoTyper from 'react-auto-typer'
-import 'react-auto-typer/dist/index.css'
 
 function Example() {
   render() {

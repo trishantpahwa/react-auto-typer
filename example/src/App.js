@@ -1,10 +1,12 @@
 import React from 'react'
+import './index.css';
 
 import { AutoTyper } from 'react-auto-typer'
-import 'react-auto-typer/dist/index.css'
 
 const App = () => {
-  return <AutoTyper text="Hello! this is a sample text" delay={100} />
+  return (
+    <AutoTyper text="Hello! this is a sample text" delay={100} styleClass={'autotyper'} />
+  )
 }
 
 export default App
