@@ -27,6 +27,9 @@ jobs:
       - name: Build library
         run: npm run build
 
+      - name: Add types declaration file
+        run: npm run postbuild
+
       - name: Verify package (pack)
         run: npm pack
 
