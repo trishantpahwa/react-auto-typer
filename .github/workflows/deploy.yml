@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Publish to npm
 
 on:
   push:
@@ -7,22 +7,19 @@ on:
     types: [closed]
     branches: [main]
 
-permissions:
-  contents: write
-
 jobs:
-  build-and-deploy:
+  build-and-publish:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Use Node.js and configure registry
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install root dependencies
         run: npm ci
@@ -30,13 +27,12 @@ jobs:
       - name: Build library
         run: npm run build
 
-      - name: Install and build example
-        run: |
-          cd example
-          npm ci
-          npm run build
+      - name: Verify package (pack)
+        run: npm pack
 
-      - name: Deploy to GitHub Pages
+      - name: Publish to npm
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          # publish the package from the repository root
+          npm publish --access public
