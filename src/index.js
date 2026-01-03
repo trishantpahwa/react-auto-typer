@@ -12,8 +12,9 @@ export const AutoTyper = (props) => {
   }
 
   useEffect(() => {
-    setInterval(typer, props.delay);
-  }, [])
+    const id = setInterval(typer, props.delay || 100);
+    return () => clearInterval(id);
+  }, [props.delay])
 
   return (
     <div>

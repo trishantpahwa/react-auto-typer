@@ -1,11 +1,15 @@
-import React from 'react'
-import './index.css';
+import './App.css'
 
+import React from 'react'
 import { AutoTyper } from 'react-auto-typer'
 
-const App = () => {
+function App() {
   return (
-    <AutoTyper text="Hello! this is a sample text" delay={100} styleClass={'autotyper'} />
+    <div className="App">
+      <header className="App-header">
+        <AutoTyper text="Hello! This is the example using local package." delay={100} styleClass={'autotyper'} />
+      </header>
+    </div>
   )
 }
 
